@@ -9,4 +9,8 @@ routes.get('/home', (req, res) => {
     res.redirect('/')
 })
 
+//Rota do arquivo padrão
+routes.get('/global',(req, res) => {
+    res.sendFile(path.resolve("src/views", "global.html"))
+})
 module.exports= routes
