@@ -4,14 +4,30 @@
   align-items: center;
 }
 
-#info {
+#info-produto {
+  margin-bottom: 25%;
+  padding-inline: 3%;
+}
+
+#info-produto p {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.img-principal img {
-  margin: 73px 5px 5px 5px;
-  width: 36vw;
-  height: 45vh;
+#img-principal img {
+  height: 50vh;
+  display: block;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+.img1-product {
+  width: 10%;
+  height: auto;
+}
+
+.img2-product {
+  width: 10%;
+  height: auto;
 }
