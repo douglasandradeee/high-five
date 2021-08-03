@@ -11,7 +11,7 @@ routes.get('/home', (req, res) => {
 })
 
 routes.get('/products', (req, res) => {
-res.sendFile(path.resolve("src/views","products.html"))
+    res.sendFile(path.resolve("src/views","products.html"))
 })
 
 module.exports= routes
