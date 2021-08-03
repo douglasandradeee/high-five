@@ -8,5 +8,8 @@ routes.get('/', (req, res) => {
 routes.get('/home', (req, res) => {
     res.redirect('/')
 })
+routes.get('/categoria', (req, res) => {
+    res.sendFile(path.resolve("src/views", "categoria.html"))
+})
 
 module.exports= routes

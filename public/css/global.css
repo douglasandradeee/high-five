@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header{
@@ -55,10 +56,9 @@
   flex-direction: row;
   align-items: center;
   background-color:#444444;
-  position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 10vh;
+  padding: 40px;
   justify-content: center;
   
 }
