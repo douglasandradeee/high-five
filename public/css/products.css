@@ -1,0 +1,17 @@
+.conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-principal img {
+  margin: 73px 5px 5px 5px;
+  width: 36vw;
+  height: 45vh;
+}
