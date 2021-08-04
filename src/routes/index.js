@@ -12,4 +12,8 @@ routes.get('/categoria', (req, res) => {
     res.sendFile(path.resolve("src/views", "categoria.html"))
 })
 
+routes.get('/products', (req, res) => {
+    res.sendFile(path.resolve("src/views","products.html"))
+})
+
 module.exports= routes
