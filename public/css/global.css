@@ -10,7 +10,7 @@
   background-color: #444444;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
 }
 
@@ -55,7 +55,6 @@
   flex-direction: row;
   align-items: center;
   background-color: #444444;
-  position: absolute;
   bottom: 0;
   width: 100vw;
   height: 10vh;
