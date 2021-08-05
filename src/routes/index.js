@@ -3,17 +3,17 @@ const routes = express.Router()
 const path = require('path')
 
 routes.get('/', (req, res) => {
-    res.sendFile(path.resolve("src/views", "home.html"))
+    res.render(path.resolve("src/views", "home"))
 })
 routes.get('/home', (req, res) => {
     res.redirect('/')
 })
 routes.get('/categoria', (req, res) => {
-    res.sendFile(path.resolve("src/views", "categoria.html"))
+    res.render(path.resolve("src/views", "categoria"))
 })
 
 routes.get('/products', (req, res) => {
-    res.sendFile(path.resolve("src/views","products.html"))
+    res.render(path.resolve("src/views","products"))
 })
 
 module.exports= routes
