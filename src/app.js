@@ -6,7 +6,7 @@ const routes = require('./routes/index');
 
 //configurando o template egine ejs
 app.set('view engine', 'ejs');
-app.set('views', path.resolve("views"));
+app.set('views', path.resolve("src", "views"));
 
 app.use(express.static("public"));
 app.use(express.json());
