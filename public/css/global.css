@@ -48,6 +48,8 @@
 }
 
 .footer {
+  position: fixed;
+  z-index: 2;
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -62,6 +64,8 @@
 }
 
 .footer a {
+  position: relative;
+  z-index: 2;
   color: white;
   text-decoration: none;
   justify-content: space-between;
