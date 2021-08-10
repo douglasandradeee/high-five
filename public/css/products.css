@@ -74,6 +74,7 @@
 
 #recomendacoes ul {
   list-style-type: none;
+  margin-top: 45%;
 }
 
 #recomendacoes ul li img {
