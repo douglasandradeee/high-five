@@ -3,8 +3,7 @@
   flex-wrap: wrap;
 }
 
-
-.conteudo-banner div{
+.conteudo-banner div {
   background-color: black;
   width: 100vw;
   height: 60vh;
@@ -21,30 +20,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
-.conteudo-ofertas h1{
-  color:#444444;
+.conteudo-ofertas h1 {
+  color: #444444;
   padding-left: 20px;
 }
 
-.conteudo-ofertas div{
+.conteudo-ofertas div {
   width: 100vw;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.conteudo-ofertas img{
+.conteudo-ofertas img {
   height: 350px;
   max-width: 100%;
 }
 
-.content hr{
+.content hr {
   border-color: #444444;
   height: 15;
   width: 50vw;
   background: #444444;
   margin-left: 25vw;
-
 }
