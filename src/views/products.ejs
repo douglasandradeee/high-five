@@ -1,80 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/products.css" />
     <title>Products</title>
-</head>
-<body>
-    <header>
-        <%- include('components/header.ejs') %>
-    </header>
+  </head>
+  <body>
+    <%- include('components/header.ejs') %>
     <main class="conteudo">
-        <section id="principal">
-            <div id="img-principal"><img src="/img/products/ipad_pro.jpeg" alt=""></div>
-            <div id="miniaturas">
-                <ul>
-                    <li><img 
-                        class="img1-product"
-                        src="/img/products/fundo_ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                    <li><img 
-                        class="img2-product"
-                        src="/img/products/detalhes_ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                    <li><img 
-                        class="img3-product"
-                        src="/img/products/lado_ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                    <li><img 
-                        class="img4-product"
-                        src="/img/products/ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                    <li><img 
-                        class="img5-product"
-                        src="/img/products/caneta_ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                    <li><img 
-                        class="img6-product"
-                        src="/img/products/ipad_pro.jpeg"
-                        alt=""
-                        />
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="info-produto">
-            <h1>Ipad</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, delectus rem! Facilis cum error impedit, similique vitae voluptate ea, odio excepturi corporis voluptas, mollitia officia vero provident! Beatae, eaque iure?</p>
-            <a href="http://localhost:7000/products-info">mais informações</a>
-            <h2 class="preco">R$ 4.599,00</h2>
-            <button id="buttoon-comprar">Comprar</button>
-        </section>
-        <section id="recomendacoes">
-            <ul>
-                <li> <img src="img/products/ipad-pro.jpeg" alt=""> Ipad1</li>
-                <li> <img src="img/products/ipad-pro.jpeg" alt=""> Ipad2</li>
-                <li> <img src="img/products/ipad-pro.jpeg" alt=""> Ipad3</li>
-            </ul>
-        </section>
+      <section id="principal">
+        <div id="img-principal">
+          <img src="/img/products/ipad_pro.jpeg" alt="" />
+        </div>
+        <div id="miniaturas">
+          <ul>
+            <li>
+              <img
+                class="img1-product"
+                src="/img/products/fundo_ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="img2-product"
+                src="/img/products/detalhes_ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="img3-product"
+                src="/img/products/lado_ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="img4-product"
+                src="/img/products/ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="img5-product"
+                src="/img/products/caneta_ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                class="img6-product"
+                src="/img/products/ipad_pro.jpeg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="info-produto">
+        <h1>Ipad</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+          delectus rem! Facilis cum error impedit, similique vitae voluptate ea,
+          odio excepturi corporis voluptas, mollitia officia vero provident!
+          Beatae, eaque iure?
+        </p>
+        <a href="http://localhost:7000/products-info">mais informações</a>
+        <h2 class="preco">R$ 4.599,00</h2>
+        <button id="buttoon-comprar">Comprar</button>
+      </section>
+      <section id="recomendacoes">
+        <ul>
+          <li><img src="img/products/ipad-pro.jpeg" alt="" /> Ipad1</li>
+          <li><img src="img/products/ipad-pro.jpeg" alt="" /> Ipad2</li>
+          <li><img src="img/products/ipad-pro.jpeg" alt="" /> Ipad3</li>
+        </ul>
+      </section>
     </main>
-    <footer class="footer">
-        <a href="/atendimento">Atendimento</a>
-        <a href="/institucional">Institucional</a>
-        <a href="/pagamento">Pagamento</a>
-    </footer>
-</body>
+    <%- include('components/footer.ejs') %>
+  </body>
 </html>
