@@ -6,32 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/categoria.css" />
     <link rel="stylesheet" href="/css/global.css" />
-    <title>Apple Watch >> High-Five</title>
+    <title>Carrinho</title>
   </head>
   <body>
-    <div class="wrapper">
       <%- include('components/header.ejs') %>
       <section>
           <div>  
-             <h1> Carrinho de compras </h1>
-             <button id="topo" type="checkbox" name="selecionarTodos"> Selecionar todos</button>
+            <h1>Carrinho de compras</h1>
+            <button id="topo" type="checkbox" name="selecionarTodos">Selecionar todos</button>
           </div>
-       </section>  
-       <section id="produto">
+      </section>
+      <section id="produto">
         <button id="produto" type="checkbox" name="checkboxProduto"> </button>
-          <div> Produtos </div>
+          <div>Produtos</div>
           <img src="" alt="imagem do produto">
-          <p> Produto x<p> 
-          <p> nome do Produto</p>
+          <p>Produto x<p> 
+          <p>nome do Produto</p>
           <p>descrição do produto</p>
           <p>Valor</p>
           <p>quantidade</p>
           <button type="button" id="quantidadeMenos"> - </button>
           <button type="button" id="quantidadeMais"> + </button>
-          <div> subtotal </div>
+          <div>subtotal</div>
       </section>
-      <button type="button" id="continuarComprando">  Continuar comprando </button>
-
+      <button type="button" id="continuarComprando">Continuar comprando</button>
       <section id="valor">
         <div id="valor">
             <p>Subtotal</p>
@@ -42,37 +40,33 @@
       </section>
     <section id="formaDePagamento">
         <input type="text" placeholder="Insira o Cupom">
-        <button type="submit">Enviar </button>
+        <button type="submit">Enviar</button>
     </section>
     <section>
-        <h1> Forma de pagamento </h1>
+        <h1>Forma de pagamento</h1>
         <div> 
             <p>selecione a forma de pagamento</p>
             <select name="Forma de pagamento">
-               <option> Boleto </option>
-               <option> Débito </option>
-               <option> Crédito </option>
-               <option> Pix </option>
+              <option>Boleto</option>
+              <option>Débito</option>
+              <option>Crédito</option>
+              <option>Pix</option>
             </select>
         </div>
-        <div>
-
-        </div>
+        <div>Dados de Pagamento</div>
         <div>
             <button type="submit" id="finalizarPagamento">Finalizar Pagamento</button>
         </div>
     </section>
     <section id="endereco">
         <input type="text" placeholder="CEP" id="cep">
-        <p> Rua </p>
-        <p> Número </p>
-        <p> complemento</p>
-        <p> Cidade </p>
-        <p> Estado </p>
-        <p> Referencia </p>
+        <p>Rua</p>
+        <p>Número</p>
+        <p>complemento</p>
+        <p>Cidade</p>
+        <p>Estado</p>
+        <p>Referencia</p>
     </section>
-
-      <%- include('components/footer.ejs') %>
-    </div>
+      <%-include('components/footer.ejs')%>
   </body>
 </html>

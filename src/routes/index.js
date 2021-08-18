@@ -1,19 +1,18 @@
 const express = require('express');
 const routes = express.Router();
-const path = require('path');
+const homeController = require('../controllers/homeController')
+const categoriaController = require('../controllers/categoriaController');
+const productsController = require('../controllers/productsController');
+const carrinhoController = require('../controllers/carrinhoController');
 
-routes.get('/', (req, res) => {
-    res.render("home")
-});
-routes.get('/home', (req, res) => {
-    res.redirect('/')
-});
-routes.get('/categoria', (req, res) => {
-    res.render(path.resolve("src/views", "categoria"))
-});
+routes.get('/',homeController.viewHome);
 
-routes.get('/products', (req, res) => {
-    res.render(path.resolve("src/views","products"))
-});
+routes.get('/home', homeController.viewHome);
+
+routes.get('/categoria', categoriaController.viewCategoria);
+
+routes.get('/products', productsController.viewProducts);
+
+routes.get('/carrinho', carrinhoController.viewCarrinho);
 
 module.exports= routes;
