@@ -61,20 +61,20 @@
   margin-bottom: 40px;
 }
 
-.card-produto {
+.card-products {
   width: 285px;
 }
 
-.card-produto img {
+.card-products img {
   width: 285px;
 }
 
-.card-produto h4 {
+.card-products h4 {
   font-weight: 400;
   font-size: 14px;
 }
 
-.card-produto p {
+.card-products p {
   font-size: 20px;
   font-weight: 700;
 }
