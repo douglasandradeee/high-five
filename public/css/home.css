@@ -46,3 +46,31 @@
   background: #444444;
   margin-left: 25vw;
 }
+
+@media (max-width: 480px) {
+  #menu-mobile {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    
+  }
+
+  #header-link{
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-mobile {
+    display: none;
+    
+  }
+}
+
+@media (max-width: 1280px) {
+  #menu-mobile {
+    display: none;
+    
+  }
+
+}

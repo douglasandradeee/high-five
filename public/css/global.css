@@ -16,7 +16,7 @@
   height: 10vh;
 }
 
-.header a {
+#header-link{
   color: white;
   text-decoration: none;
 }
@@ -69,4 +69,9 @@
   text-decoration: none;
   justify-content: space-between;
   gap: 100px;
+}
+
+#menu-mobile {
+  display: block;
+  
 }
