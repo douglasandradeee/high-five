@@ -50,7 +50,7 @@
 }
 
 .footer {
-  z-index: 2;
+  z-index: 3;
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -62,6 +62,8 @@
   width: 100vw;
   height: 10vh;
   justify-content: center;
+  position:relative;
+
 }
 
 .footer a {
