@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/userpanel.css" />
+    <title>High Five | User panel</title>
+  </head>
+  <body>
+    <%- include('components/header.ejs') %>
+    <main>
+      <aside id="side-bar">
+        <h2>Olá, @nome</h2>
+        <img src="" alt="user-avatar" />
+        <p><i>Edite sua imagem</i></p>
+        <nav>
+          <ul>
+            <li><a href="">Meus pedidos</a></li>
+            <li><a href="">Dados cadastrais</a></li>
+            <li><a href="">Meus endereços</a></li>
+            <li><a href="">Lista de desejo</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section id="painel-section">
+        <table>
+          <thead>
+            <th>Nº do pedido</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>thagamento</th>
+            <th>NF-e</th>
+            <th>Todos</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>teste</td>
+              <td>teste</td>
+              <td>teste</td>
+              <td>teste</td>
+              <td>teste</td>
+              <td>teste</td>
+            </tr>
+            <tr>
+              <td>e</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>5</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <%- include('components/footer.ejs') %>
+  </body>
+</html>
