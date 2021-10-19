@@ -101,4 +101,3 @@ add foreign key (idProduto) references produtos(id)
 
 alter table itensPedidos
 add foreign key (idPedido) references pedido(id)
-
