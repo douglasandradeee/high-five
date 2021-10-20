@@ -104,11 +104,11 @@ form a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1 px solid gray;
-        border-radius: 15 px;
+        border: 1px solid gray;
+        border-radius: 15px;
         width: 70%;
-        margin: 39 px auto;
-        padding: 20 px;
+        margin: 182px auto;
+        padding: 20px;
         background-color: #ccc;
     }
 
