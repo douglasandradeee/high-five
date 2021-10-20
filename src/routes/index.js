@@ -20,4 +20,8 @@ routes.get('/finalizacao-compra', carrinhoController.finalizacaoCompra);
 
 routes.get('/user-painel', userPainelController.viewUserPainel);
 
+routes.get('/login', homeController.viewLoginPage);
+
+routes.post('/login-auth', homeController.userLogin)
+
 module.exports= routes;

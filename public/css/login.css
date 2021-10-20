@@ -1,0 +1,125 @@
+main {
+    font-family: 'Roboto';
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 15px;
+    width: 40%;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ccc;
+}
+
+form label {
+    align-self: flex-start;
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    height: 40px;
+    outline: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 24px;
+    padding-left: 8px;
+}
+
+form input:focus {
+    border-color: #0071e3;
+}
+
+form button {
+    background-color: #0071e3;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-family: 'Roboto';
+    margin-top: 20px;
+    border-radius: 8px;
+    height: 40px;
+    padding: 10px 40px;
+    width: 80%;
+
+}
+
+form button:hover {
+    background-color: #06c;
+    transition: 0.5s;
+}
+
+form p {
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+form h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+form a {
+    text-decoration: none;
+    color: black;
+}
+
+form a:hover {
+    color: #06c;
+    transition: 0.5s;
+}
+
+@media (max-width: 480px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1 px solid gray;
+        border-radius: 15 px;
+        width: 80%;
+        margin: 39 px auto;
+        padding: 20 px;
+        background-color: #ccc;
+    }
+
+    form button {
+        padding: 0;
+        width: 100%;
+    }
+
+    form a {
+        text-decoration: underline;
+    }
+}
+
+
+@media (max-width: 768px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1 px solid gray;
+        border-radius: 15 px;
+        width: 70%;
+        margin: 39 px auto;
+        padding: 20 px;
+        background-color: #ccc;
+    }
+
+    form button {
+        padding: 0;
+        width: 100%;
+    }
+
+    form a {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 1280px) {}
