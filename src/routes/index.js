@@ -16,6 +16,8 @@ routes.get('/products', productsController.viewProducts);
 
 routes.get('/carrinho', carrinhoController.viewCarrinho);
 
-routes.get('/user-painel', userPainelController.viewUserPainel)
+routes.get('/finalizacao-compra', carrinhoController.finalizacaoCompra);
+
+routes.get('/user-painel', userPainelController.viewUserPainel);
 
 module.exports= routes;
