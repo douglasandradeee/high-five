@@ -1,14 +1,14 @@
 CREATE DATABASE highFive;
 USE highFive;
 
-CREATE TABLE cidade (
+CREATE TABLE Cidade (
   id int(10) AUTO_INCREMENT,
   nome varchar(200),
   cidade varchar(200),
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE cliente (
+CREATE TABLE Cliente (
   id int(10) AUTO_INCREMENT,
   id_cidade int(20),
   nome varchar(200),
@@ -26,19 +26,19 @@ CREATE TABLE cliente (
   PRIMARY KEY (`id`)
 );
 
-create table forma_pagamento(
+create table Forma_Pagamento(
 	id int(10) AUTO_INCREMENT,
 	descricao varchar (5000),
 	PRIMARY KEY (`id`)
 );
 
-create table categorias(
+create table Categorias(
 	id int(10) AUTO_INCREMENT,
 	descricao varchar (5000),
 	PRIMARY KEY (`id`)
 );
 
-create table produtos(
+create table Produtos(
 	id int(10) AUTO_INCREMENT,
 	idCategoria int (100),
 	descricao varchar (5000),
@@ -48,7 +48,7 @@ create table produtos(
 	PRIMARY KEY (`id`)
 );
 
-create table itensPedidos(
+create table ItensPedidos(
 	id int(10) AUTO_INCREMENT,
 	idProduto int (20),
 	idPedido int (20),
@@ -81,23 +81,23 @@ create table Pedido(
 	PRIMARY KEY (`id`)
 );
 
-ALTER TABLE cliente 
-ADD FOREIGN KEY (id_cidade) REFERENCES cidade(id)
+ALTER TABLE Cliente 
+ADD FOREIGN KEY (id_cidade) REFERENCES Cidade(id);
 
-alter table Pedido
-add foreign key (idLogin) references cliente(id)
+ALTER TABLE Pedido
+add foreign key (idLogin) references Cliente(id);
 
-alter table Pedido 
-add foreign key (idFormaPAG) references forma_pagamento(id)
+ALTER TABLE Pedido 
+add foreign key (idFormaPAG) references Forma_Pagamento(id);
 
-alter table pedido
-add foreign key (idStatus) references status (id)
+ALTER TABLE Pedido
+add foreign key (idStatus) references status (id);
 
-ALTER TABLE produtos 
-ADD FOREIGN KEY (idCategoria) REFERENCES categorias(ID)
+ALTER TABLE Produtos 
+ADD FOREIGN KEY (idCategoria) REFERENCES Categorias(ID);
 
-alter table itensPedidos
-add foreign key (idProduto) references produtos(id)
+ALTER TABLE ItensPedidos
+add foreign key (idProduto) references Produtos(id);
 
-alter table itensPedidos
-add foreign key (idPedido) references pedido(id)
+ALTER TABLE itensPedidos
+add foreign key (idPedido) references Pedido(id);
