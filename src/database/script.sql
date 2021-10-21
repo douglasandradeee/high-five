@@ -81,6 +81,19 @@ create table Pedido(
 	PRIMARY KEY (`id`)
 );
 
+create table Produtos(
+	id int(10) AUTO_INCREMENT,
+	nome varchar(100),
+	modelo varchar(100),
+	preco decimal(30, 2),
+	descricao varchar(5000),
+	imagem varchar(200),
+	categoria_id int not null,
+	create_at date,
+	primary key(`id`),
+	foreign key(categoria_id) references categorias(id)
+);
+
 ALTER TABLE cliente 
 ADD FOREIGN KEY (id_cidade) REFERENCES cidade(id)
 

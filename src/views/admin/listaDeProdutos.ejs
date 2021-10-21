@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - highFive</title>
+  </head>
+  <body>
+    <%- include('../components/header') %>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Modelo</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Imagem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% produtos.forEach(produto => { %>
+          <tr>
+            <td><%= produto.id %></td>
+            <td><%= produto.nome %></td>
+            <td><%= produto.modelo %></td>
+            <td><%= produto.categoria %></td>
+            <td><%= produto.preco %></td>
+            <td><%= produto.descricao %></td>
+            <td><%= produto.imagem %></td>
+            <td>
+              <form action="/deletar-produto/<%= produto.id%>">
+                <button type="submit">Excluir</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
