@@ -2,7 +2,7 @@ module.exports = (connection, dataTypes) => {
   const Produto = connection.define('Produto', {
     id: {
       type: dataTypes.INTEGER,
-      primary: true,
+      primaryKey: true,
       autoIncremente: true,
     },
     name: {
