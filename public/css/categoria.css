@@ -14,7 +14,7 @@
 
 .breadcrumb {
   color: #7c7b7b;
-  width: 100vw;
+  width: 100%;
   margin-top: 40px;
   margin-left: 100px;
 }
@@ -25,7 +25,7 @@
 }
 
 .category-nav {
-  width: 100vw;
+  width: 100%;
 }
 
 .category-cards {
@@ -77,4 +77,10 @@
 .card-products p {
   font-size: 20px;
   font-weight: 700;
+}
+
+#footer-cat {
+  display: block;
+  position: relative;
+  bottom: 0;
 }

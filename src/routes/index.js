@@ -5,6 +5,9 @@ const categoriaController = require('../controllers/categoriaController');
 const productsController = require('../controllers/productsController');
 const carrinhoController = require('../controllers/carrinhoController');
 const userPainelController = require('../controllers/userPainelController');
+const produtosRotasAdmin = require('../routes/admin');
+
+app.use('/produtos', produtosRotasAdmin);
 
 routes.get('/',homeController.viewHome);
 
@@ -16,6 +19,12 @@ routes.get('/products', productsController.viewProducts);
 
 routes.get('/carrinho', carrinhoController.viewCarrinho);
 
-routes.get('/user-painel', userPainelController.viewUserPainel)
+routes.get('/finalizacao-compra', carrinhoController.finalizacaoCompra);
+
+routes.get('/user-painel', userPainelController.viewUserPainel);
+
+routes.get('/login', homeController.viewLoginPage);
+
+routes.post('/login-auth', homeController.userLogin)
 
 module.exports= routes;
