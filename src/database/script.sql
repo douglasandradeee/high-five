@@ -42,7 +42,7 @@ create table produtos(
 	id int(10) AUTO_INCREMENT,
 	idCategoria int (100),
 	descricao varchar (5000),
-	preco float (10),
+	preco decimal (30,2),
 	imagem varchar (5),
 	nome varchar (100),
 	PRIMARY KEY (`id`)
@@ -74,24 +74,11 @@ create table Pedido(
 	id int(10) AUTO_INCREMENT,
 	idLogin int(30),
 	IdFormaPAG int (30),
-	frete float (10),
-	total float (10),
+	frete decimal (30, 2),
+	total decimal (30, 2),
 	IdStatus int (30),
 	data date,
 	PRIMARY KEY (`id`)
-);
-
-create table Produtos(
-	id int(10) AUTO_INCREMENT,
-	nome varchar(100),
-	modelo varchar(100),
-	preco decimal(30, 2),
-	descricao varchar(5000),
-	imagem varchar(200),
-	categoria_id int not null,
-	create_at date,
-	primary key(`id`),
-	foreign key(categoria_id) references categorias(id)
 );
 
 ALTER TABLE cliente 
