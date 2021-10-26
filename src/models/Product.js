@@ -1,36 +1,40 @@
-module.exports = (connection, dataTypes) => {
-  const Produto = connection.define('Produto', {
-    id: {
-      type: dataTypes.INTEGER,
-      primary: true,
-      autoIncremente: true,
+module.exports = (connection, DataTypes) => {
+  const Product = connection.define(
+    "Product",
+    {
+      ProductID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      ProductName: {
+        type: DataTypes.STRING(100),
+      },
+      ProductDesc: {
+        type: DataTypes.STRING(5000),
+      },
+      ProductPrice: {
+        type: DataTypes.DECIMAL(30, 2),
+      },
+      ProductImage: {
+        type: DataTypes.STRING(200),
+      },
+      ProductCategoryID: {
+        type: DataTypes.INTEGER,
+      },
     },
-    name: {
-      type: dataTypes.STRING(100),
-    },
-    modelo: {
-      type: dataTypes.STRING(100),
-    },
-    preco: {
-      type: dataTypes.DECIMAL(30, 2),
-    },
-    descricao: {
-      type: dataTypes.STRING(5000),
-    },
-    imagem: {
-      type: dataTypes.STRING(200),
-    },
-    categoria_id: {
-      type: dataTypes.INTEGER,
-      foreignKey: true,
-    },
-    create_at: {
-      type: dataTypes.DATE,
+    {
+      tableName: "products",
+      timestamps: false,
     }
-  },
-  {
-    tableName: 'Produtos',
-    timestamps: false,
-  });
-  return Produto
-}
+  );
+
+  Product.associate = (models) => {
+    Product.belongsTo(models.Category, {
+      foreignKey: "ProductCategoryID",
+      as: "category",
+    });
+  };
+
+  return Product;
+};

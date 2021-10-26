@@ -43,7 +43,7 @@ create table produtos(
 	idCategoria int (100),
 	descricao varchar (5000),
 	preco float (10),
-	imagem varchar (5),
+	imagem varchar (200),
 	nome varchar (100),
 	PRIMARY KEY (`id`)
 );
@@ -81,36 +81,23 @@ create table Pedido(
 	PRIMARY KEY (`id`)
 );
 
-create table Produtos(
-	id int(10) AUTO_INCREMENT,
-	nome varchar(100),
-	modelo varchar(100),
-	preco decimal(30, 2),
-	descricao varchar(5000),
-	imagem varchar(200),
-	categoria_id int not null,
-	create_at date,
-	primary key(`id`),
-	foreign key(categoria_id) references categorias(id)
-);
-
 ALTER TABLE cliente 
-ADD FOREIGN KEY (id_cidade) REFERENCES cidade(id)
+ADD FOREIGN KEY (id_cidade) REFERENCES cidade(id);
 
 alter table Pedido
-add foreign key (idLogin) references cliente(id)
+add foreign key (idLogin) references cliente(id);
 
 alter table Pedido 
-add foreign key (idFormaPAG) references forma_pagamento(id)
+add foreign key (idFormaPAG) references forma_pagamento(id);
 
-alter table pedido
-add foreign key (idStatus) references status (id)
+alter table Pedido
+add foreign key (idStatus) references status (id);
 
 ALTER TABLE produtos 
-ADD FOREIGN KEY (idCategoria) REFERENCES categorias(ID)
+ADD FOREIGN KEY (idCategoria) REFERENCES categorias(id);
 
 alter table itensPedidos
-add foreign key (idProduto) references produtos(id)
+add foreign key (idProduto) references produtos(id);
 
 alter table itensPedidos
-add foreign key (idPedido) references pedido(id)
+add foreign key (idPedido) references pedido(id);
