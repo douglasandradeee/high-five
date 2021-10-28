@@ -7,7 +7,11 @@ const carrinhoController = require('../controllers/carrinhoController');
 const userPainelController = require('../controllers/userPainelController');
 const routesAdmin = require('../routes/admin');
 
+<<<<<<< HEAD
 routes.use('/admin', routesAdmin);
+=======
+routes.use('/produtos', produtosRotasAdmin);
+>>>>>>> dev
 
 routes.get('/',homeController.viewHome);
 

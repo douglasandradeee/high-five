@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = (connection, DataTypes) => {
   const Product = connection.define(
     "Product",
@@ -22,6 +23,14 @@ module.exports = (connection, DataTypes) => {
       ProductCategoryID: {
         type: DataTypes.INTEGER,
       },
+=======
+module.exports = (connection, dataTypes) => {
+  const Produto = connection.define('Produto', {
+    id: {
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      autoIncremente: true,
+>>>>>>> dev
     },
     {
       tableName: "products",
