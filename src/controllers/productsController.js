@@ -5,6 +5,11 @@ const productsController = {
   viewProducts: async (req, res) => {
     res.render("products");
   },
+
+  viewProductsNew: async (re,res) => {
+    res.render("products-new");
+  },
+
   cadastrarProduto: async (req, res) => {
     const { nome, modelo, categoria, preco, descricao, imagem } = req.body;
 
