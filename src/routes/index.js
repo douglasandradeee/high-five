@@ -5,9 +5,13 @@ const categoriaController = require('../controllers/categoriaController');
 const productsController = require('../controllers/productsController');
 const carrinhoController = require('../controllers/carrinhoController');
 const userPainelController = require('../controllers/userPainelController');
-const produtosRotasAdmin = require('../routes/admin');
+const routesAdmin = require('../routes/admin');
 
+<<<<<<< HEAD
+routes.use('/admin', routesAdmin);
+=======
 routes.use('/produtos', produtosRotasAdmin);
+>>>>>>> dev
 
 routes.get('/',homeController.viewHome);
 
