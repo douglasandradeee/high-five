@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - highFive</title>
+  </head>
+  <body>
+    <%- include('../components/header') %>
+    <main>
+      <form action="/cadastrar-produtos" method="POST">
+        <label for="name">Nome do produto</label>
+        <input type="text" id="name" name="nome" />
+        <label for="modelo">Modelo do produto</label>
+        <input type="text" id="modelo" name="modelo" />
+        <label for="categoria">Categoria do produto</label>
+        <input type="text" id="categora" name="categoria" />
+        <label for="preco">Preço do produto</label>
+        <input type="text" id="preco" name="preco" />
+        <label for="descricao">Descricao do produto</label>
+        <input type="text" id="descricao" name="descricao" />
+        <label for="link">Link da imagem do Produto</label>
+        <input type="text" id="link" name="imagem" />
+
+        <button type="submit">Finalizar o cadastro</button>
+      </form>
+    </main>
+  </body>
+</html>
