@@ -30,4 +30,6 @@ routes.get('/login', homeController.viewLoginPage);
 
 routes.post('/login-auth', homeController.userLogin)
 
+routes.get('/admin/home', productsController.listAdmProducts);
+
 module.exports= routes;
