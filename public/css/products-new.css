@@ -208,3 +208,7 @@ body{
 .section-info2 p{
     text-align: justify;
 }
+
+@media (max-width: 480px){}
+
+@media (max-width: 768px){}

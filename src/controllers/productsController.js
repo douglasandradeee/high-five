@@ -1,7 +1,18 @@
-const { Product } = require("../models");
+const { Product, Category } = require("../models");
 const uuid = require("uuidv4");
 
 const productsController = {
+  listAdmProducts: async (req, res) => {
+    const products = await Product.findAll({
+      include: {
+        model: Category,
+        as: 'category',
+        required: true
+      }
+    })
+    
+    return res.render("admin/home", { products })
+  },
   viewProducts: async (req, res) => {
     res.render("products");
   },
