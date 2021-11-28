@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+      <%- include('./partials/navbar') %>
+      <%- include('./partials/sidebar') %>
+    
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Create Product</h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Create Product</li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+    
+        <!-- Main content -->
+        <div class="content">
+          
+          <div class="card card-solid">
+            <div class="card-body pb-0">
+              <div class="row">
+                <div class="col-md-6 align-items-stretch flex-column">
+                  <div class="card">
+
+                    <form action="/admin/save-product" method="POST">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="ProductName">Name</label>
+                          <input type="text" class="form-control" name="ProductName" id="ProductName">
+                        </div>
+                        <div class="form-group">
+                          <label for="ProductPrice">Price</label>
+                          <input type="text" class="form-control" name="ProductPrice" id="ProductPrice">
+                        </div>
+                        <div class="form-group">
+                          <label for="Category">Category</label>
+                          <select class="form-control" name="ProductCategoryID" id="Category">
+                            <% categories.forEach(category => { %> 
+                              <option value="<%= category.CategoryID %>">
+                                <%= category.CategoryName %>
+                              </option>
+                            <% }) %> 
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="ProductImage">Image</label>
+                          <input type="text" class="form-control" name="ProductImage" id="ProductImage">
+                        </div>
+                        <div class="form-group">
+                          <label for="ProductDesc">Description</label>
+                          <textarea class="form-control" name="ProductDesc" id="ProductDesc" rows="3"></textarea>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <button class="btn btn-primary">Save changes</button>
+                      </div>
+                    </form>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+    
+      <%- include('./partials/footer') %>
+  </body>
+</html>

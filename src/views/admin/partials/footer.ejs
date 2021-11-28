@@ -1,0 +1,42 @@
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      <b>Version</b>
+      1.0.0
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2021 <a href="#">HighFive</a>.</strong> All rights reserved.
+  </footer>
+</div>
+
+<!-- jQuery -->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/js/adminlte.min.js"></script>
+<script src="../assets/js/sweetalert2.all.min.js"></script>
+<% if(typeof query.msg !== 'undefined'){ %>
+  <% if(query.msg == "updated") {%>
+    <script>
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '<%= query.msg %> - <%= query.id %>',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+  <% } else if(query.msg == "created") {%>
+    <script>
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '<%= query.msg %>',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+  <% } %>
+<% } %>

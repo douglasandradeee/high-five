@@ -15,6 +15,10 @@ const productsController = {
 
     return res.render("admin/home", { products, categories });
   },
+  formAdmProduct: async (req, res) => {
+    const categories = await Category.findAll();
+    return res.render("admin/create-product", { categories });
+  },
   createAdmProduct: async (req, res) => {
     const {
       ProductName,
@@ -32,8 +36,7 @@ const productsController = {
         ProductDesc,
         ProductImage,
       });
-      res.status(201).json({ message: "cadastrado com sucesso!" });
-      return res.redirect("/admin/home");
+      return res.redirect(`/admin/home?msg=created`);
     } catch (e) {
       console.log(e.message);
       return res.redirect("/admin/home");
@@ -66,7 +69,7 @@ const productsController = {
           },
         }
       );
-      console.log(updateProduct);
+      // console.log(updateProduct);
       return res.redirect(`/admin/home?msg=updated&id=${id}`);
     } catch (e) {
       console.log(e.message);
