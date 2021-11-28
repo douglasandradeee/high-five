@@ -6,18 +6,78 @@ const productsController = {
     const products = await Product.findAll({
       include: {
         model: Category,
-        as: 'category',
-        required: true
-      }
-    })
-    
-    return res.render("admin/home", { products })
+        as: "category",
+        required: true,
+      },
+    });
+    const categories = await Category.findAll();
+    // console.log(categories);
+
+    return res.render("admin/home", { products, categories });
+  },
+  createAdmProduct: async (req, res) => {
+    const {
+      ProductName,
+      ProductPrice,
+      ProductCategoryID,
+      ProductDesc,
+      ProductImage,
+    } = req.body;
+
+    try {
+      const product = await Product.create({
+        ProductName,
+        ProductPrice,
+        ProductCategoryID,
+        ProductDesc,
+        ProductImage,
+      });
+      res.status(201).json({ message: "cadastrado com sucesso!" });
+      return res.redirect("/admin/home");
+    } catch (e) {
+      console.log(e.message);
+      return res.redirect("/admin/home");
+    }
+  },
+  updateAdmProduct: async (req, res) => {
+    const id = req.params.id*1;
+    console.log(typeof id,' - ', id);
+    console.log('body =', req.body);
+    const {
+      ProductName,
+      ProductPrice,
+      ProductCategoryID,
+      ProductDesc,
+      ProductImage,
+    } = req.body;
+
+    try {
+      const updateProduct = await Product.update(
+        {
+          ProductName,
+          ProductPrice,
+          ProductCategoryID,
+          ProductDesc,
+          ProductImage,
+        },
+        {
+          where: {
+            ProductID: id,
+          },
+        }
+      );
+      console.log(updateProduct);
+      return res.redirect(`/admin/home?msg=updated&id=${id}`);
+    } catch (e) {
+      console.log(e.message);
+      return res.redirect("/admin/home?msg=error");
+    }
   },
   viewProducts: async (req, res) => {
     res.render("products");
   },
 
-  viewProductsNew: async (re,res) => {
+  viewProductsNew: async (re, res) => {
     res.render("products-new");
   },
 
