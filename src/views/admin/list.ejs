@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+      <%- include('./partials/navbar') %>
+      <%- include('./partials/sidebar') %>
+    
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Products List</h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                  <li class="breadcrumb-item active">Products List</li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+    
+        <!-- Main content -->
+        <div class="content">
+          
+          <div class="card card-solid">
+            <div class="card-body pb-0">
+              <div class="row">
+                <% products.forEach(product => { %>
+                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                  <div class="card bg-light d-flex flex-fill">
+                    <div class="card-header text-muted border-bottom-0">
+                      <b>id:</b> <%= product.ProductID %> 
+                    </div>
+                    <div class="card-body pt-0">
+                      <div class="row">
+                        <div class="col-7">
+                          <h2 class="lead"><b>category:</b> <%= product.category.CategoryName %></h2>
+                          <p class="text-muted text-sm"><b>Product: </b><%= product.ProductName %> </p>
+                          <ul class="ml-4 mb-0 fa-ul text-muted">
+                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-money-bill"></i></span> <b>Price:</b>  <%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.ProductPrice) %> </li>
+                          </ul>
+                        </div>
+                        <div class="col-5 text-center">
+                          <img src="<%= product.ProductImage %> " alt="product" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="text-right">
+                        <a href="#" data-toggle="modal" data-target="#product-<%= product.ProductID %>" class="btn btn-sm bg-primary">
+                          <i class="far fa-edit"></i>
+                        </a>
+                        <a href="#" class="btn btn-sm btn-danger">
+                          <i class="fas fa-trash-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <% products.forEach(product => { %>
+          <div class="modal fade" id="product-<%= product.ProductID %>" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Edit </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="/admin/udpate-product/<%= product.ProductID %>?_method=PUT" method="POST">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="ProductName-<%= product.ProductID %>">Name</label>
+                      <input type="text" class="form-control" name="ProductName" id="ProductName-<%= product.ProductID %>" value="<%= product.ProductName %>">
+                    </div>
+                    <div class="form-group">
+                      <label for="ProductPrice-<%= product.ProductID %>">Price</label>
+                      <input type="text" class="form-control" name="ProductPrice" id="ProductPrice-<%= product.ProductID %>" value="<%= product.ProductPrice %>">
+                    </div>
+                    <div class="form-group">
+                      <label for="Category-<%= product.ProductID %>">Category</label>
+                      <select class="form-control" name="ProductCategoryID" id="Category-<%= product.ProductID %>">
+                        <% categories.forEach(category => { 
+                            var selected = (product.category.CategoryID === category.CategoryID) ? "selected" : "";
+                        %> 
+                          <option value="<%= category.CategoryID %>" <%= selected %>>
+                            <%= category.CategoryName %>
+                          </option>
+                        <% }) %> 
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="ProductImage-<%= product.ProductID %>">Image</label>
+                      <input type="text" class="form-control" name="ProductImage" id="ProductImage-<%= product.ProductID %>" value="<%= product.ProductImage %>">
+                    </div>
+                    <div class="form-group">
+                      <label for="ProductDesc-<%= product.ProductID %>">Description</label>
+                      <textarea class="form-control" name="ProductDesc" id="ProductDesc-<%= product.ProductID %>" rows="3"><%= product.ProductDesc %></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+          
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+    
+      <%- include('./partials/footer') %>
+  </body>
+</html>
