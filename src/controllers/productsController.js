@@ -2,6 +2,9 @@ const { Product, Category } = require("../models");
 const uuid = require("uuidv4");
 
 const productsController = {
+  indexAdmProducts: async (req, res) => {
+    return res.render("admin/index")
+  },
   listAdmProducts: async (req, res) => {
     const products = await Product.findAll({
       include: {
@@ -13,7 +16,7 @@ const productsController = {
     const categories = await Category.findAll();
     // console.log(categories);
 
-    return res.render("admin/home", { products, categories });
+    return res.render("admin/list", { products, categories });
   },
   formAdmProduct: async (req, res) => {
     const categories = await Category.findAll();
@@ -36,10 +39,10 @@ const productsController = {
         ProductDesc,
         ProductImage,
       });
-      return res.redirect(`/admin/home?msg=created`);
+      return res.redirect(`/admin/list?msg=created`);
     } catch (e) {
       console.log(e.message);
-      return res.redirect("/admin/home");
+      return res.redirect("/admin/list?msg=error");
     }
   },
   updateAdmProduct: async (req, res) => {
@@ -70,10 +73,10 @@ const productsController = {
         }
       );
       // console.log(updateProduct);
-      return res.redirect(`/admin/home?msg=updated&id=${id}`);
+      return res.redirect(`/admin/list?msg=updated&id=${id}`);
     } catch (e) {
       console.log(e.message);
-      return res.redirect("/admin/home?msg=error");
+      return res.redirect("/admin/list?msg=error");
     }
   },
   viewProducts: async (req, res) => {

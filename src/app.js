@@ -20,4 +20,4 @@ app.use((req, res, next) => {
 });
 
 app.use(routes);
-app.listen(port, () => console.log(`The server is runing on port:${port}`));
+app.listen(port, () => console.log(`The server is runing on http://localhost:${port}`));

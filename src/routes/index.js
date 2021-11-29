@@ -30,7 +30,8 @@ routes.get("/login", homeController.viewLoginPage);
 
 routes.post("/login-auth", homeController.userLogin);
 
-routes.get("/admin/home", productsController.listAdmProducts);
+routes.get("/admin", productsController.indexAdmProducts);
+routes.get("/admin/list", productsController.listAdmProducts);
 routes.get("/admin/create-product", productsController.formAdmProduct);
 routes.post("/admin/save-product", productsController.createAdmProduct);
 routes.put("/admin/udpate-product/:id", productsController.updateAdmProduct);
