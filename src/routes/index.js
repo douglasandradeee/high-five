@@ -7,6 +7,7 @@ const carrinhoController = require("../controllers/carrinhoController");
 const userPainelController = require("../controllers/userPainelController");
 const routesAdmin = require("../routes/admin");
 const { viewProductsNew } = require("../controllers/productsController");
+const authController = require("../controllers/authController");
 
 routes.use("/admin", routesAdmin);
 
@@ -30,6 +31,10 @@ routes.get("/login", homeController.viewLoginPage);
 
 routes.post("/login-auth", homeController.userLogin);
 
+routes.get("/admin/login", authController.viewLogin);
+routes.post("/admin/login", authController.loginAdmin);
+routes.get("/admin/register", authController.viewRegister);
+routes.post("/admin/register", authController.registerAdmin);
 routes.get("/admin", productsController.indexAdmProducts);
 routes.get("/admin/list", productsController.listAdmProducts);
 routes.get("/admin/create-product", productsController.formAdmProduct);
