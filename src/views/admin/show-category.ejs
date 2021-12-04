@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head-category') %>
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+      <%- include('./partials/navbar') %>
+      <%- include('./partials/sidebar') %>
+    
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Category >> <b><%= title[0].CategoryName %> </b></h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/admin/category">Category List</a></li>
+                  <li class="breadcrumb-item active"><%= title[0].CategoryName %></li>
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <div class="content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body table-responsive p-0">
+                  <% if (category !== null)  {%> 
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% category.products.forEach(product => {  %> 
+                        <tr>
+                          <td><%= product.ProductID %></td>
+                          <td><%= product.ProductName %></td>
+                          <td><%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.ProductPrice) %></td>
+                        </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                  <% } else if (category === null) { %> 
+                    <div class="alert alert-info alert-dismissible m-2">
+                      <h5><i class="icon fas fa-info"></i> Alerta!</h5>
+                      Ainda não foi cadastrado produto.
+                    </div>
+                  <% } %> 
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+        </div>
+    
+        <!-- Main content -->
+      </div>
+      <!-- /.content-wrapper -->
+    
+      <%- include('./partials/footer-category') %>
+    </div>
+  </body>
+</html>

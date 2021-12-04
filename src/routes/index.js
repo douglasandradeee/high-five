@@ -8,6 +8,7 @@ const userPainelController = require("../controllers/userPainelController");
 const routesAdmin = require("../routes/admin");
 const { viewProductsNew } = require("../controllers/productsController");
 const authController = require("../controllers/authController");
+const categoryController = require("../controllers/categoryController");
 
 routes.use("/admin", routesAdmin);
 
@@ -35,10 +36,16 @@ routes.get("/admin/login", authController.viewLogin);
 routes.post("/admin/login", authController.loginAdmin);
 routes.get("/admin/register", authController.viewRegister);
 routes.post("/admin/register", authController.registerAdmin);
+
 routes.get("/admin", productsController.indexAdmProducts);
 routes.get("/admin/list", productsController.listAdmProducts);
 routes.get("/admin/create-product", productsController.formAdmProduct);
 routes.post("/admin/save-product", productsController.createAdmProduct);
 routes.put("/admin/udpate-product/:id", productsController.updateAdmProduct);
+
+routes.get("/admin/category", categoryController.indexCategory);
+routes.get("/admin/category/:id/products", categoryController.showCategory);
+routes.get("/admin/create-category", categoryController.formCategory);
+routes.post("/admin/save-category", categoryController.createCategory);
 
 module.exports = routes;

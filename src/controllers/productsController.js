@@ -3,7 +3,7 @@ const uuid = require("uuidv4");
 
 const productsController = {
   indexAdmProducts: async (req, res) => {
-    return res.render("admin/index")
+    return res.render("admin/index", {page_name: 'home'})
   },
   listAdmProducts: async (req, res) => {
     const products = await Product.findAll({
@@ -16,11 +16,11 @@ const productsController = {
     const categories = await Category.findAll();
     // console.log(categories);
 
-    return res.render("admin/list", { products, categories });
+    return res.render("admin/list", { products, categories, page_name: 'product-list' });
   },
   formAdmProduct: async (req, res) => {
     const categories = await Category.findAll();
-    return res.render("admin/create-product", { categories });
+    return res.render("admin/create-product", { categories, page_name: 'create-product' });
   },
   createAdmProduct: async (req, res) => {
     const {
