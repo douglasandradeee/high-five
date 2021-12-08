@@ -7,16 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/home.css" />
   <link rel="stylesheet" href="/css/global.css" />
-  <title>High Five Home Page</title>
+  <link rel="stylesheet" href="/css/glide.core.min.css">
+  <script src="/js/glide.js"></script>
+
+  <title>High Five</title>
 </head>
 
 <body>
   <%- include('components/header.ejs') %>
   <main class="content">
-    <section class="content-banner">
-
+    <section class="banner-home">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="/img/homepage/banner-home-iphone-12.jpeg" alt="Promoção Iphone 12">
+            </li>
+            <li class="glide__slide">
+              <img src="/img/homepage/banner-home-airpods-pro.jpeg" alt="Promoção Airpods">
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <svg aria-label="perfil do usuario" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+            </svg>
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            <svg aria-label="carrinho de compra" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>      
     </section>
-    <article class="content-ofertas">
+    <article class="content-ofertas container">
       <h1><strong>Ofertas</strong> da semana</h1>
       <div>
         <img src="/img/categoria/cat-watch-6.jpeg" alt="Apple Watch Series 6" />
@@ -26,7 +52,17 @@
       </div>
     </article>  
   </main>
-   <%- include('components/footer.ejs') %>  
+  <%- include('components/footer.ejs') %>  
+  
+  <script>
+    var glide = new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 3000,
+    })
+    
+    glide.mount()
+  </script>  
+
 </body>
 
 </html>
