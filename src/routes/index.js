@@ -17,6 +17,7 @@ routes.get("/", homeController.viewHome);
 routes.get("/home", homeController.viewHome);
 
 routes.get("/categoria", categoriaController.viewCategoria);
+routes.get("/categoria/:id", categoriaController.showCategoria);
 
 routes.get("/products", productsController.viewProducts);
 

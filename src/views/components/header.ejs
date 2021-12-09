@@ -9,21 +9,11 @@
       </div>
       <nav>
         <ul class="nav-list">
-          <li class="nav-item">
-            <a class="nav-link" href="">cat1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">cat2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">cat3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">cat4</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">cat5</a>
-          </li>
+          <% categories.forEach(category => { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/categoria/<%= category.CategoryID %> "><%= category.CategoryName %> </a>
+            </li>
+          <% }) %> 
         </ul>
       </nav>
       <div class="header-cart">
