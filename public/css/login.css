@@ -1,5 +1,9 @@
 main {
     font-family: 'Roboto';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -8,7 +12,7 @@ form {
     align-items: center;
     border-radius: 15px;
     width: 40%;
-    margin: 40px auto;
+    margin-top: 10vh;
     padding: 40px;
     background-color: #e7e7e7;
 }
