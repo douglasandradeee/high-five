@@ -9,8 +9,9 @@ const routesAdmin = require("../routes/admin");
 const { viewProductsNew } = require("../controllers/productsController");
 const authController = require("../controllers/authController");
 const categoryController = require("../controllers/categoryController");
+const router = require("../routes/admin");
 
-routes.use("/admin", routesAdmin);
+
 
 routes.get("/", homeController.viewHome);
 
@@ -23,7 +24,8 @@ routes.get("/products", productsController.viewProducts);
 
 routes.get("/products-new", productsController.viewProductsNew);
 
-routes.get("/carrinho", carrinhoController.viewCarrinho);
+routes.get("/carrinho-novo", carrinhoController.viewCarrinho);
+routes.get('/carrinhoNovo',carrinhoController.viewCarrinhoNew);
 
 routes.get("/finalizacao-compra", carrinhoController.finalizacaoCompra);
 
