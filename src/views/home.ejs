@@ -7,26 +7,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/home.css" />
   <link rel="stylesheet" href="/css/global.css" />
-  <title>High Five Home Page</title>
+  <link rel="stylesheet" href="/css/glide.core.min.css">
+
+  <title>High Five</title>
 </head>
 
 <body>
   <%- include('components/header.ejs') %>
   <main class="content">
-    <section class="content-banner">
-
+    <section class="banner-home">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="/img/homepage/banner-home-iphone-12.jpeg" alt="Promoção Iphone 12">
+            </li>
+            <li class="glide__slide">
+              <img src="/img/homepage/banner-home-airpods-pro.jpeg" alt="Promoção Airpods">
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+            </svg>
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>      
     </section>
-    <article class="content-ofertas">
+    <article class="content-ofertas container">
       <h1><strong>Ofertas</strong> da semana</h1>
-      <div>
-        <img src="/img/categoria/cat-watch-6.jpeg" alt="Apple Watch Series 6" />
-        <img src="/img/categoria/cat-watch-se.jpeg" alt="Apple Watch SE" />
-        <img src="/img/categoria/cat-watch-5.jpeg" alt="Apple Watch Series 5" />
-        <img src="/img/categoria/cat-watch-3.jpeg" alt="Apple Watch Series 3" />
-      </div>
+        <div class="card">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <% products.forEach(product => { %>
+                <li class="glide__slide">
+                  <div class="card-img">
+                    <a href="#">
+                      <img src="<%= product.ProductImage %>" alt="<%= product.ProductName %>">
+                    </a>
+                  </div>
+                  <div>
+                    <h3 class="product-name">
+                      <a href="#">
+                        <%= product.ProductName %>
+                      </a>
+                    </h3>
+                    <p class="product-price">
+                      <%= new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.ProductPrice) %>
+                      <button class="adicionar-carrinho">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill="none" d="M0 0h24v24H0V0z"></path>
+                          <path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4l-3.87 7H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"></path>
+                        </svg>
+                      </button>
+                    </p>
+                  </div>
+                </li>
+              <% }) %> 
+            </ul>
+          </div>
+          <div class="slide__arrows" data-glide-el="controls">
+            <button class="slide__arrow slide__arrow--left" data-glide-dir="<">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+              </svg>
+            </button>
+            <button class="slide__arrow slide__arrow--right" data-glide-dir=">">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
     </article>  
   </main>
-   <%- include('components/footer.ejs') %>  
+  <%- include('components/footer.ejs') %>
+  <script src="/js/glide.js"></script>
+  <script>
+    var glide = new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 3000,
+    })
+
+    var glide2 = new Glide('.card', {
+      type: 'carousel',
+      perView: 5,
+      gap: 60,
+    })
+    
+    glide.mount()
+    glide2.mount()
+  </script>
+
 </body>
 
 </html>
